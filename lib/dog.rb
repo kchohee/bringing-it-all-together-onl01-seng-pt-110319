@@ -22,6 +22,9 @@ class Dog
     DB[:conn].execute(sql)
   end
   def save
+    sql=<<-SQL
+    SQL
+    DB[:conn].execute(sql)
   end
   def self.create(name:,breed:)
   end
