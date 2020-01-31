@@ -1,17 +1,35 @@
-class Dog 
+class Dog
   attr_accessor :name, :breed
   attr_reader :id
-  def initilize(name:,breed:, id=nil)
+  def initialize(name:, breed:, id: nil)
     @name = name
-    @bree = breed
+    @breed = breed
     @id = id
   end
-  def self.new_from_db
-  end 
-  def self.find_by_name
-  end 
+  def self.create_table
+    sql = <<-SQL
+    CREATE TABLE IF NOT EXISTS dogs (
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      breed TEXT
+    )
+    SQL
+    DB[:conn].execute(sql)
+  end
+  def self.drop_table
+  end
+  def save
+  end
+  def self.create(name:,breed:)
+  end
+  def self.new_from_db(row)
+  end
+  def self.find_by_id(id)
+  end
+  def self.find_or_create_by(name:,breed:)
+  end
+  def self.find_by_name(name)
+  end
   def update
-  end 
-  def save 
- end
+  end
 end
