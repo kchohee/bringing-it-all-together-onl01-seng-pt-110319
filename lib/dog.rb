@@ -7,4 +7,8 @@ class Dog
   end 
   def self.find_by_name
   end 
-  
+  def update
+  end 
+  def save 
+ end
+end
