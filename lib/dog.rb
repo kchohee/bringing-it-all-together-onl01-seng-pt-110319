@@ -19,7 +19,7 @@ class Dog
     sql=<<-SQL
     DROP TABLE IF EXISTS dogs
     SQL
-    DB[:conn].execute
+    DB[:conn].execute(sql)
   end
   def save
   end
