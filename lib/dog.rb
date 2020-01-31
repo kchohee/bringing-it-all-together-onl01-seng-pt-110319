@@ -39,6 +39,8 @@ class Dog
     dog
   end
   def self.new_from_db(row)
+    dog = Dog.new(name: row[1], breed: row[2], id: row[0])
+    dog
   end
   def self.find_by_id(id)
     sql = "SELECT * FROM dogs WHERE id = ?"
